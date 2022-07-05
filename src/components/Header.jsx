@@ -1,4 +1,5 @@
 import { Logo } from "./logo";
+import { SearchItems } from "./Search";
 
 export function Header() {
     return (
@@ -7,10 +8,10 @@ export function Header() {
                 <div className="sm:flex items-center justify-between">
                     <Logo></Logo>
                     <div className="flex justify-center sm:justify-end items-center text-right lg:w-1/2 sm:w-3/4 w-full">
-                        <form className="flex mr-5 lg:mr-10">
+                        {/* <form className="flex mr-5 lg:mr-10">
                             <input type="search" name="hackflix-search" class="search"></input>
-                        </form>
-                        {/*<Search></Search>*/}
+                        </form> */}
+                        <SearchItems></SearchItems>
                         <div className="bookmarks">
                             <a class="bookmark-nav py-3 mr-5">
                                 Bookmarks
