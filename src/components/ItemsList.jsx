@@ -1,3 +1,11 @@
-export function Filter(){
-    return <h1 className="text-3xl font-bold bg-black">Inside the Header</h1>
+import { Item } from "./Item";
+
+export function ItemsList({ data }) {
+  return (
+    <div className="grid gap-4">
+      {data.map((item) => (
+        <Item item={item} />
+      ))}
+    </div>
+  );
 }

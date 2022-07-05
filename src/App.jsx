@@ -1,18 +1,12 @@
-import React from 'react'
-import { Routes, Route, BrowserRouter, Link } from 'react-router-dom'
-import {
-  HomePage,
-  NotFoundPage,
-  DetailsPage,
-  BookmarksPage
-} from './pages'
+import React from "react";
+import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
+import { HomePage, NotFoundPage, DetailsPage, BookmarksPage } from "./pages";
 
-import { Header } from './components'
+import { Header } from "./components";
 
 function App() {
-
   return (
-    <>
+    <div>
       <BrowserRouter>
         <Header></Header>
         {/* <React.Fragment>
@@ -23,15 +17,18 @@ function App() {
         <Link to={'/oops'}>Oops</Link>
       </React.Fragment> */}
         <Routes>
-          <Route path='/' element={<HomePage />}></Route>
-          <Route path='movies' element={<HomePage />}></Route>
-          <Route path='bookmarks' element={<BookmarksPage />}></Route>
-          <Route path='movies/details/:movieId' element={<DetailsPage />}></Route>
-          <Route path='*' element={<NotFoundPage />}></Route>
+          <Route path="/" element={<HomePage />}></Route>
+          <Route path="movies" element={<HomePage />}></Route>
+          <Route path="bookmarks" element={<BookmarksPage />}></Route>
+          <Route
+            path="movies/details/:movieId"
+            element={<DetailsPage />}
+          ></Route>
+          <Route path="*" element={<NotFoundPage />}></Route>
         </Routes>
       </BrowserRouter>
-    </>
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
