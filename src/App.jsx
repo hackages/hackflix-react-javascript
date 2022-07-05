@@ -6,7 +6,8 @@ import {
   DetailsPage,
   BookmarksPage } from './pages'
 
-import { Header} from './components'
+import {Header} from './components'
+import {Footer} from './components'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='movies/details/:movieId' element={<DetailsPage/>}></Route>  
         <Route path='*' element={<NotFoundPage/>}></Route>  
       </Routes>
+      <Footer></Footer>
       </BrowserRouter> 
     </>
   )
