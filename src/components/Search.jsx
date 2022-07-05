@@ -1,13 +1,11 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { AppContext } from "../context/AppProvider";
 
 export function SearchItems() {
-  const context = useContext(AppContext);
-  const [items, setItems] = useState(context.getAllMovies());
+  const {filterByTitle} = useContext(AppContext);
 
   function searchHandler(event) {
-    const searchItems = context.filterMovieByTitle(event.target.value);
-    setItems(searchItems);
+    filterByTitle(event.target.value);
   }
 
   return (
