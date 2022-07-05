@@ -1,23 +1,23 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { movies } from "../../mocks";
+import { filterMovieByTitle } from "../utils/filterMoviesByTitle";
 
 export const AppContext = createContext();
-
-function getMovieById(id) {
-  return movies.filter((movie) => id == movie.id);
-}
-
-function getAllMovies() {
-  return movies;
-}
-
-const contextData = {
-  getMovieById,
-  getAllMovies,
-};
-
+  
 export function AppProvider({ children }) {
+  const [searchQuery, setSearchQuery] = useState('')
+  const [moviesToShow, updateMovies] = useState(movies)
+  
+  function filterByTitle(searchTerm) {
+    const filteredMovies = filterMovieByTitle(movies, searchTerm)
+    setSearchQuery(searchTerm)
+    updateMovies(filteredMovies)
+  }
+
+
   return (
-    <AppContext.Provider value={contextData}>{children}</AppContext.Provider>
+    <AppContext.Provider value={{movies: moviesToShow, filterByTitle}}>
+      {children}
+    </AppContext.Provider>
   );
 }
