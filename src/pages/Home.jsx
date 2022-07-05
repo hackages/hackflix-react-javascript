@@ -3,11 +3,11 @@ import { ItemsList } from "../components/ItemsList";
 import { AppContext } from "../context/AppProvider";
 
 export function HomePage() {
-  const data = useContext(AppContext);
+  const {movies} = useContext(AppContext);
 
   return (
     <div className="container bg-black text-white">
-      <ItemsList data={data.getAllMovies()} />
+      <ItemsList data={movies} />
     </div>
   );
 }
