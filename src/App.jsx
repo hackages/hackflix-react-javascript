@@ -6,7 +6,7 @@ import { Header } from "./components";
 
 function App() {
   return (
-    <div>
+    <div className="text-white bg-black font-sans text-xl leading-snug font-normal">
       <BrowserRouter>
         <Header></Header>
         {/* <React.Fragment>
@@ -28,7 +28,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
 export default App;
