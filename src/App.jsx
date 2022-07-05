@@ -12,7 +12,7 @@ import { Header } from './components'
 function App() {
 
   return (
-    <>
+    <div className="text-white bg-black font-sans text-xl leading-snug font-normal">
       <BrowserRouter>
         <Header></Header>
         {/* <React.Fragment>
@@ -30,7 +30,7 @@ function App() {
           <Route path='*' element={<NotFoundPage />}></Route>
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   )
 }
 

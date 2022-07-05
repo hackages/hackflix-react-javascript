@@ -8,13 +8,13 @@ export function Header() {
                     <Logo></Logo>
                     <div className="flex justify-center sm:justify-end items-center text-right lg:w-1/2 sm:w-3/4 w-full">
                         <form className="flex mr-5 lg:mr-10">
-                            <input type="search" name="hackflix-search" class="search"></input>
+                            <input type="search" name="hackflix-search" className="search"></input>
                         </form>
                         {/*<Search></Search>*/}
                         <div className="bookmarks">
-                            <a class="bookmark-nav py-3 mr-5">
+                            <a className="bookmark-nav py-3 mr-5">
                                 Bookmarks
-                                <span class="badge"> (3)</span>
+                                <span className="badge"> (3)</span>
                             </a>
                         </div>
                         {/*<Bookmarks></Bookmark>*/}
