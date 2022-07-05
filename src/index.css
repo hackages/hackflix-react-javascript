@@ -6,10 +6,7 @@
 @layer components {
     .search {
         background: rgba(255, 255, 255, 0.15);
-        font-size: 14px;
         padding: 10px 15px;
-        border-radius: 2px 0 0 2px;
-        max-height: 40px;
     }
 
     .badge {
