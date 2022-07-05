@@ -7,8 +7,8 @@ function getMovieById(id) {
   return movies.filter((movie) => id == movie.id);
 }
 
-function filterMovieByTitle(movies, event) {
-  return movies.filter((movie) => movie.title.includes(event.target.value));
+function filterMovieByTitle(value) {
+  return movies.filter((movie) => movie.title.includes(value));
 }
 
 function getAllMovies() {
