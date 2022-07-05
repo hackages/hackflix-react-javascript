@@ -7,6 +7,10 @@ function getMovieById(id) {
   return movies.filter((movie) => id == movie.id);
 }
 
+function filterMovieByTitle(value) {
+  return movies.filter((movie) => movie.title.includes(value));
+}
+
 function getAllMovies() {
   return movies;
 }
@@ -14,6 +18,7 @@ function getAllMovies() {
 const contextData = {
   getMovieById,
   getAllMovies,
+  filterMovieByTitle,
 };
 
 export function AppProvider({ children }) {
