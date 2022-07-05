@@ -1,16 +1,35 @@
-import { useState } from 'react'
-import logo from '../image/logo.svg'
-import './App.css'
+import React from 'react'
+import {Routes, Route, BrowserRouter, Link} from 'react-router-dom'
+import {
+  HomePage,
+  NotFoundPage,
+  DetailsPage,
+  BookmarksPage } from './pages'
+
+import { Header} from './components'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+      <Header></Header>
+      {/* <React.Fragment>
+        <Link to={'/'}>Home</Link>
+        <Link to={'/movies'}>Movies</Link>
+        <Link to={'/bookmarks'}>Bookmarks</Link>
+        <Link to={'/movies/details/78969fdmlsqkfj'}>Movie Details</Link>
+        <Link to={'/oops'}>Oops</Link>
+      </React.Fragment> */}
+      <Routes>
+        <Route path='/' element={<HomePage/>}></Route>  
+        <Route path='movies' element={<HomePage/>}></Route>  
+        <Route path='bookmarks' element={<BookmarksPage/>}></Route>  
+        <Route path='movies/details/:movieId' element={<DetailsPage/>}></Route>  
+        <Route path='*' element={<NotFoundPage/>}></Route>  
+      </Routes>
+      </BrowserRouter> 
+    </>
   )
 }
 
