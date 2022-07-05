@@ -13,7 +13,7 @@ export function SearchItems() {
       <form className="flex mr-5 lg:mr-10">
         <input
           type="search"
-          class="search"
+          className="search text-sm rounded-sm max-h-10"
           name="hackflix-search"
           placeholder="search"
           value={searchQuery}
