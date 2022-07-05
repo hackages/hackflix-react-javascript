@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AppContext } from "../context/AppProvider";
 
 export function SearchItems() {
-  const {filterByTitle} = useContext(AppContext);
+  const { filterByTitle } = useContext(AppContext);
 
   function searchHandler(event) {
     filterByTitle(event.target.value);
@@ -13,7 +13,7 @@ export function SearchItems() {
       <form className="flex mr-5 lg:mr-10">
         <input
           type="search"
-          class="search"
+          className="search text-sm rounded-sm max-h-10"
           name="hackflix-search"
           placeholder="search"
           onChange={searchHandler}
