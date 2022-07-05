@@ -6,7 +6,7 @@ import { Header } from "./components";
 
 function App() {
   return (
-    <div className="container px-8">
+    <div>
       <BrowserRouter>
         <Header></Header>
         {/* <React.Fragment>

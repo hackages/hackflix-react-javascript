@@ -1,4 +1,4 @@
-import { Children, createContext } from "react";
+import { createContext } from "react";
 import { movies } from "../../mocks";
 
 export const AppContext = createContext();
