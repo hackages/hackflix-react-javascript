@@ -13,9 +13,9 @@ export function Header() {
                         </form> */}
                         <SearchItems></SearchItems>
                         <div className="bookmarks">
-                            <a class="bookmark-nav py-3 mr-5">
+                            <a className="bookmark-nav py-3 mr-5">
                                 Bookmarks
-                                <span class="badge"> (3)</span>
+                                <span className="badge text-red-700"> (3)</span>
                             </a>
                         </div>
                         {/*<Bookmarks></Bookmark>*/}

@@ -2,8 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}",],
   theme: {
+    screens: {
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1280px',
+    },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
+      sans: ['CircularStd', 'sans-serif'],
     },
     extend: {},
   },

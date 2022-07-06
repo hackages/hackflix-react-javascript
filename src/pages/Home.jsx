@@ -8,7 +8,7 @@ export function HomePage() {
   return (
     <div className="movie-list py-20">
       <div className="container mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-10">
           <ItemsList data={movies} />
         </div>
       </div>
