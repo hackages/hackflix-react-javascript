@@ -9,7 +9,7 @@ module.exports = {
       xl: '1280px',
     },
     fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
+      sans: ['CircularStd', 'sans-serif'],
     },
     extend: {},
   },

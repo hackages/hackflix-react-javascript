@@ -1,12 +1,12 @@
 export function Item({ item }) {
   return (
-    <div className="single-movie relative">
+    <div className="single-movie relative border-2 border-black rounded-md relative overflow-hidden transition-all duration-300">
       <img src={item.poster_path} />
-      <div className="movie-content flex items-center justify-center items-center justify-center text-center absolute w-full h-full inset-0 px-4">
+      <div className="movie-content flex items-center justify-center text-center opacity-0 invisible absolute w-full h-full inset-0 px-4 transition-all duration-300">
         <div className="content-inner">
-          <button class="bookmark p-1 inline-block absolute">Bookmark</button>
-          <h3 class="mb-5">{item.title}</h3>
-          <a class="details-btn inline-block" href={item.id}>View Details</a>
+          <button class="bookmark cursor-pointer bg-white text-black inline-block absolute text-sm rounded-sm hover:bg-green-600 transition-all duration-200 hover:text-white">Bookmark</button>
+          <h3 class="mb-5 font-bold text-2xl">{item.title}</h3>
+          <a class="bg-red-700 border border-red-700 hover:bg-transparent hover:border hover:border-red-700 hover:text-red-700 text-white py-3 px-7 rounded transition-all duration-200 inline-block" href={item.id}>View Details</a>
         </div>
       </div>
     </div>

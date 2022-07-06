@@ -15,7 +15,7 @@ export function Header() {
                         <div className="bookmarks">
                             <a class="bookmark-nav py-3 mr-5">
                                 Bookmarks
-                                <span class="badge"> (3)</span>
+                                <span class="badge text-red-700"> (3)</span>
                             </a>
                         </div>
                         {/*<Bookmarks></Bookmark>*/}
