@@ -1,4 +1,4 @@
-import { Logo } from "./logo";
+import { Logo } from "./Logo";
 import { SearchItems } from "./Search";
 
 export function Header() {
