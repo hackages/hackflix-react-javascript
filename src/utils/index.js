@@ -1,3 +1,3 @@
 export * from "./filterMovieById";
-export * from "./filterMoviesByCategory";
+export * from "./filterMoviesByCategoryName";
 export * from "./filterMoviesByTitle";

@@ -8,15 +8,13 @@ import { useContext } from "react";
 import { AppContext } from "./context/AppProvider";
 
 function App() {
-
-  const context = useContext(AppContext)
-  console.log(context);
+  const context = useContext(AppContext);
 
   return (
     <div className="text-white bg-black font-sans text-xl leading-snug font-normal">
       <BrowserRouter>
         <Header></Header>
-        <Filter items={categories} selectFilter={context.selectFilter}></Filter>
+        <Filter items={categories}></Filter>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="movies" element={<HomePage />}></Route>
