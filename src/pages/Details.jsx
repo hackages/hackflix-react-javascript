@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { movies, genres } from '../../mocks';
 import { AppContext } from '../context/AppProvider';
 
@@ -17,6 +17,11 @@ export function DetailsPage() {
     return null
   })
 
+  let navigate = useNavigate();
+  function homeLink() {
+    navigate('/')
+  }
+
   return (
     <section className="wrapper">
       <div className="movie-list py-20">
@@ -30,7 +35,7 @@ export function DetailsPage() {
               <p className="text-sm opacity-75 mb-5">{movie.overview}</p>
               <p className='mb-5'>{genresNames.join(' / ')}</p>
               <button className="bg-red-600 hover:bg-red-900 text-white py-3 px-8 rounded transition-all duration-200 inline-block">Watch</button>
-              <a href="/" className="bg-red-600 hover:bg-red-900 text-white py-3 px-8 rounded transition-all duration-200 inline-block ml-5">Back to Home</a>
+              <button onClick={homeLink} className="bg-red-600 hover:bg-red-900 text-white py-3 px-8 rounded transition-all duration-200 inline-block ml-5">Back to Home</button>
             </div>
           </div>
         </div>
