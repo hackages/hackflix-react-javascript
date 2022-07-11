@@ -22,7 +22,7 @@ function App() {
         <Footer></Footer>
       </BrowserRouter>
     </div>
-  )
+  );
 }
 
 export default App;
