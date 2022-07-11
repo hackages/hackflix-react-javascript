@@ -22,6 +22,9 @@ export function AppProvider({ children }) {
     updateMovies(filteredMovies);
   }
 
+
+  function getMovieById(id) {
+    return movies.find(movie => movie.id === parseInt(id))}
   function selectFilter(selectedFilter) {
     setSelectedCategory(selectedFilter)
 
@@ -29,7 +32,9 @@ export function AppProvider({ children }) {
 
   return (
     <AppContext.Provider
-      value={{ movies: moviesToShow, filterByTitle, searchQuery, selectFilter, selectedCategory }}
+
+      value={{ movies: moviesToShow, filterByTitle, searchQuery, selectFilter, selectedCategory, getMovieById }}
+
     >
       {children}
     </AppContext.Provider>
