@@ -20,6 +20,14 @@ export function AppProvider({ children }) {
     updateMovies(filteredMovies);
   }
 
+  function addToBookmarked(movie) {
+    return [...movie, { bookmarked: true }];
+  }
+
+  function removeBookmarked(movie) {
+    return [...movie, { bookmarked: false }];
+  }
+
   return (
     <AppContext.Provider
       value={{ movies: moviesToShow, filterByTitle, searchQuery }}
