@@ -1,6 +1,6 @@
 export function Item({ item }) {
   return (
-    <div className="single-movie relative border-2 border-black rounded-md relative overflow-hidden transition-all duration-300">
+    <div className="single-movie relative border-2 rounded-md overflow-hidden transition-all duration-300">
       <img src={item.poster_path} />
       <div className="movie-content flex items-center justify-center text-center opacity-0 invisible absolute w-full h-full inset-0 px-4 transition-all duration-300">
         <div className="content-inner">
