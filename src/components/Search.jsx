@@ -14,7 +14,7 @@ export function SearchItems() {
         <input
           type="search"
           className="search text-sm rounded-sm max-h-10"
-          name="hackflix-search"
+          name="term"
           placeholder="search"
           value={searchQuery}
           onChange={searchHandler}

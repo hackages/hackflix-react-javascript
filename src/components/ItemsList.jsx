@@ -4,7 +4,7 @@ export function ItemsList({ data }) {
   return (
     <>
       {data.map((item) => (
-        <Item item={item} />
+        <Item item={item} key={item.id} />
       ))}
     </>
   );

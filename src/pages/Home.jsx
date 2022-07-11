@@ -1,9 +1,21 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { ItemsList } from "../components/ItemsList";
 import { AppContext } from "../context/AppProvider";
 
 export function HomePage() {
-  const { movies } = useContext(AppContext);
+  const { movies, filterByCategoryAndTitle } = useContext(AppContext);
+  // get params from url
+  let [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    let searchQueries = [];
+    for (const entry of searchParams.entries()) {
+      searchQueries[entry[0]] = entry[1];
+    }
+
+    filterByCategoryAndTitle(searchQueries);
+  }, [searchParams]);
 
   return (
     <div className="movie-list py-20">
