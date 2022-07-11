@@ -1,9 +1,17 @@
 export function addToBookmarked(movie) {
-  return [...movie, { bookmarked: true }];
+  movie.bookmarked = true;
+  console.log(movie);
+  return movie;
 }
 
 export function removeBookmarked(movie) {
-  return [...movie, { bookmarked: false }];
+  movie.bookmarked = false;
+  console.log(movie);
+  return movie;
+}
+
+export function updateBookmark(movie) {
+  return movie.bookmarked ? removeBookmarked(movie) : addToBookmarked(movie);
 }
 
 export function filteredBookmarkedMovies(movies) {

@@ -23,8 +23,15 @@ export function AppProvider({ children }) {
 
   function filterByBookmarked() {
     const bookmarked = filteredBookmarkedMovies(movies);
-    console.log("hier: " + bookmarked);
+    console.log(bookmarked.length);
     updateMovies(bookmarked);
+  }
+
+  function updateMovieBookmark(title) {
+    // const thismovie = movies.find((movie) => {
+    //   movie.title === ;
+    //   updateBookmark(thismovie);
+    // });
   }
 
   return (
@@ -34,6 +41,7 @@ export function AppProvider({ children }) {
         filterByTitle,
         searchQuery,
         filterByBookmarked,
+        updateMovieBookmark,
         bookmarkCount: filteredBookmarkedMovies(movies).length,
       }}
     >
