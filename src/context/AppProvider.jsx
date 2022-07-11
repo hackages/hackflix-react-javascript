@@ -3,7 +3,6 @@ import { createContext, useState } from "react";
 import { filterMovieByTitle, filterMovieByCategory } from "../utils";
 
 import { movies } from "../../mocks";
-import { getLocalStorage } from "../utils/localStorageHelper";
 
 export const AppContext = createContext();
 
@@ -19,7 +18,6 @@ export function AppProvider({ children }) {
   }
 
   function filterByCategoryAndTitle(searchParams) {
-    console.log(searchParams);
     filterByTitle(searchParams["term"] || "");
     filterByCategory(searchParams["category"] || "");
   }
