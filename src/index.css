@@ -4,39 +4,6 @@
 
 @layer components {
 
-/* Colors */
-    :root {
-        --main-bg-color: #000;
-        --secendary-bg-color: #1e1e22;
-        --primary-color: #e50914;
-    }
-  
-/* Animations */
-    .details-btn,
-    .movie-content h3,
-    .movie-content a,
-    .movie-content .bookmark,
-    .remove-bookmark,
-    .download {
-        transition: 0.3s all;
-    }
-
-    .movie-content h3,
-    .movie-content a {
-        transform: translateY(30px);
-    }
-
-    .movie-content .bookmark {
-        transform: translateX(-5px);
-    }
-
-    .single-movie:hover .movie-content h3,
-    .single-movie:hover .movie-content a,
-    .single-movie:hover .movie-content .bookmark {
-        transform: translateY(0px);
-    }
-
-    /* Components */
     .search {
         background: rgba(255, 255, 255, 0.15);
         padding: 10px 15px;
@@ -64,14 +31,5 @@
 
     .bookmarked {
         border-color: rgba(0, 128, 0);
-    }
-
-    .remove-bookmark {
-        background: var(--primary-color);
-        border-radius: 2px;
-    }
-      
-    .remove-bookmark:hover {
-        opacity: 0.7;
     }
 }
