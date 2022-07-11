@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-import { filterMovieByTitle, filterMovieByCategory } from "../utils";
+import { filterMovieByTitle, filterMovieByCategoryName } from "../utils";
 
 import { movies } from "../../mocks";
 
@@ -13,18 +13,22 @@ export function AppProvider({ children }) {
   const [moviesToShow, updateMovies] = useState(movies);
 
   function filterByTitle(searchTerm) {
+    setSearchQuery(searchTerm);
     const filteredMovies = filterMovieByTitle(movies, searchTerm);
     updateMovies(filteredMovies);
   }
 
   function filterByCategoryAndTitle(searchParams) {
-    filterByTitle(searchParams["term"] || "");
+    console.log(searchParams);
     filterByCategory(searchParams["category"] || "");
+    filterByTitle(searchParams["term"] || "");
   }
 
-  function filterByCategory(categories) {
-    if (categories) {
-      const filteredMovies = filterMovieByCategory(movies, categories);
+  function filterByCategory(categoryName) {
+    if (categoryName === "All") {
+      updateMovies(movies);
+    } else if (categoryName) {
+      const filteredMovies = filterMovieByCategoryName(movies, categoryName);
       updateMovies(filteredMovies);
     }
   }
@@ -32,8 +36,11 @@ export function AppProvider({ children }) {
   function getMovieById(id) {
     return movies.find((movie) => movie.id === parseInt(id));
   }
+
   function selectFilter(selectedFilter) {
+    setSearchParams(params);
     setSelectedCategory(selectedFilter);
+    filterByCategory(selectedFilter || "Any");
   }
 
   return (
@@ -46,7 +53,6 @@ export function AppProvider({ children }) {
         selectedCategory,
         filterByCategoryAndTitle,
         filterByCategory,
-        filterByTitle,
         getMovieById,
       }}
     >
