@@ -20,9 +20,13 @@ export function AppProvider({ children }) {
     updateMovies(filteredMovies);
   }
 
+  function getMovieById(id) {
+    return movies.find(movie => movie.id === parseInt(id))
+  }
+
   return (
     <AppContext.Provider
-      value={{ movies: moviesToShow, filterByTitle, searchQuery }}
+      value={{ movies: moviesToShow, filterByTitle, searchQuery, getMovieById }}
     >
       {children}
     </AppContext.Provider>
