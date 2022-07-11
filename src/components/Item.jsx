@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 export function Item({ item }) {
   return (
     <div className="single-movie relative border-2 rounded-md overflow-hidden transition-all duration-300">
@@ -6,7 +7,7 @@ export function Item({ item }) {
         <div className="content-inner">
           <button className="bookmark cursor-pointer bg-white text-black inline-block absolute text-sm rounded-sm hover:bg-green-600 transition-all duration-200 hover:text-white">Bookmark</button>
           <h3 className="mb-5 font-bold text-2xl">{item.title}</h3>
-          <a className="bg-red-700 border border-red-700 hover:bg-transparent hover:border hover:border-red-700 hover:text-red-700 text-white py-3 px-7 rounded transition-all duration-200 inline-block" href={`/movies/details/${item.id}`}>View Details</a>
+          <Link className="bg-red-700 border border-red-700 hover:bg-transparent hover:border hover:border-red-700 hover:text-red-700 text-white py-3 px-7 rounded transition-all duration-200 inline-block" to={`/movies/details/${item.id}`}>View Details</Link>
         </div>
       </div>
     </div>
