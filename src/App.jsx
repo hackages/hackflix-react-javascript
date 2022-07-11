@@ -1,14 +1,16 @@
 import React from "react";
 import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
 import { HomePage, NotFoundPage, DetailsPage, BookmarksPage } from "./pages";
+import { categories } from "../mocks";
 
-import { Header, Footer } from "./components";
+import { Header, Filter, Footer } from "./components";
 
 function App() {
   return (
     <div className="text-white bg-black font-sans text-xl leading-snug font-normal">
       <BrowserRouter>
         <Header></Header>
+        <Filter items={categories}></Filter>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
           <Route path="movies" element={<HomePage />}></Route>
