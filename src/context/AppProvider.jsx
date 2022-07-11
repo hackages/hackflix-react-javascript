@@ -13,13 +13,15 @@ export function AppProvider({ children }) {
   const [moviesToShow, updateMovies] = useState(movies);
 
   function filterByTitle(searchTerm) {
+    setSearchQuery(searchTerm);
     const filteredMovies = filterMovieByTitle(movies, searchTerm);
     updateMovies(filteredMovies);
   }
 
   function filterByCategoryAndTitle(searchParams) {
-    filterByTitle(searchParams["term"] || "");
+    console.log(searchParams);
     filterByCategory(searchParams["category"] || "");
+    filterByTitle(searchParams["term"] || "");
   }
 
   function filterByCategory(categoryName) {
