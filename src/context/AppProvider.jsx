@@ -1,8 +1,7 @@
 import { createContext, useState } from "react";
 import { movies } from "../../mocks";
-import { filterMovieByTitle } from "../utils/filterMoviesByTitle";
-import { filterMovieById } from "../utils/filterMovieById";
-import { filterMovieByCategory } from "../utils/filterMoviesByCategory";
+import { filterMovieByTitle, filterMovieByCategory } from "../utils";
+
 export const AppContext = createContext();
 
 export function AppProvider({ children }) {
@@ -11,10 +10,6 @@ export function AppProvider({ children }) {
   function filterByTitle(searchTerm) {
     const filteredMovies = filterMovieByTitle(movies, searchTerm);
     updateMovies(filteredMovies);
-  }
-
-  function filterById(movieId) {
-    const filteredMovie = filterMovieById(movies, movieId);
   }
 
   function filterByCategoryAndTitle(searchParams) {
@@ -36,7 +31,6 @@ export function AppProvider({ children }) {
         movies: moviesToShow,
         filterByTitle,
         filterByCategory,
-        filterById,
         filterByCategoryAndTitle,
       }}
     >
