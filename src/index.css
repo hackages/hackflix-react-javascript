@@ -32,4 +32,8 @@
     .bookmarked {
         border-color: rgba(0, 128, 0, 1);
     }
+
+    .movie-list {
+        min-height: calc(100vh - 270px);
+    }
 }

@@ -11,7 +11,7 @@ function App() {
   const context = useContext(AppContext);
 
   return (
-    <div className="text-white bg-black font-sans text-xl leading-snug font-normal">
+    <div className="text-white bg-black font-sans text-xl leading-snug font-normal min-h-screen">
       <BrowserRouter>
         <Header></Header>
         <Filter items={categories}></Filter>
