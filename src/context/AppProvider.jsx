@@ -11,25 +11,21 @@ export function AppProvider({ children }) {
 
   const [moviesToShow, updateMovies] = useState(movies);
 
-  function filterByTitle(searchTerm) {
-    // setSearchQuery(searchTerm);
-    const filteredMovies = filterMovieByTitle(movies, searchTerm);
-    updateMovies(filteredMovies);
+  function filterByTitle(searchTerm, movies) {
+    return filterMovieByTitle(movies, searchTerm);
   }
 
   function filterByCategoryAndTitle(searchParams) {
-    console.log(searchParams);
-    filterByCategory(searchParams["category"] || "");
-    filterByTitle(searchParams["term"] || "");
+    const moviesFilteredByCategory = filterByCategory(searchParams["category"] || "", movies);
+    const filteredMovies = filterByTitle(searchParams["term"] || "", moviesFilteredByCategory);
+    updateMovies(filteredMovies)
   }
 
-  function filterByCategory(categoryName) {
-    if (categoryName === "All") {
-      updateMovies(movies);
-    } else if (categoryName) {
-      const filteredMovies = filterMovieByCategoryName(movies, categoryName);
-      updateMovies(filteredMovies);
+  function filterByCategory(categoryName, movies) {
+    if (categoryName !== "All" || categoryName !== "") {
+      return filterMovieByCategoryName(movies, categoryName);
     }
+    return movies
   }
 
   function getMovieById(id) {
@@ -55,6 +51,7 @@ export function AppProvider({ children }) {
     updateMovies(newMovies);
   }
 
+  console.log({moviesToShow});
   return (
     <AppContext.Provider
       value={{

@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { AppContext } from "../context/AppProvider";
 
 export function SearchItems() {
-  const { filterByTitle, searchQuery } = useContext(AppContext);
+  const { filterByCategoryAndTitle, searchQuery } = useContext(AppContext);
 
   function searchHandler(event) {
-    filterByTitle(event.target.value);
+    event.preventDefault()
+    // filterByTitle(event.target.value);
   }
 
   return (
@@ -14,7 +15,6 @@ export function SearchItems() {
         <input
           type="search"
           className="search text-sm rounded-sm max-h-10"
-          name="term"
           placeholder="search"
           value={searchQuery}
           onChange={searchHandler}
