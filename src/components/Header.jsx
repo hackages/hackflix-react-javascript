@@ -3,9 +3,10 @@ import { NavLink } from "react-router-dom";
 import { AppContext } from "../context/AppProvider";
 import { Logo } from "./Logo";
 import { SearchItems } from "./Search";
+import { Link } from "react-router-dom";
 
 export function Header() {
-  const context = useContext(AppContext)
+  const context = useContext(AppContext);
   return (
     <header className="py-10 text-white">
       <div className="container mx-auto">
@@ -19,10 +20,13 @@ export function Header() {
                         </form> */}
             <SearchItems></SearchItems>
             <div className="bookmarks">
-              <a className="bookmark-nav py-3 mr-5">
+              <Link className="bookmark-nav py-3 mr-5" to={`/bookmarks`}>
                 Bookmarks
-                <span className="badge text-red-700"> ({context.numberOfBookmarkedMovies})</span>
-              </a>
+                <span className="badge text-red-700">
+                  {" "}
+                  ({context.numberOfBookmarkedMovies})
+                </span>
+              </Link>
             </div>
             {/*<Bookmarks></Bookmark>*/}
           </div>
