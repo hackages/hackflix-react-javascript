@@ -16,6 +16,15 @@ function App() {
       <BrowserRouter>
         <Header></Header>
         <Routes>
+          <Route path="/" element={<>
+            <Filter items={categories}></Filter>
+            <HomePage />
+          </>}></Route>
+          <Route path="movies" element={<HomePage />}></Route>
+          <Route path="bookmarks" element={<>
+            <Filter items={categories}></Filter>
+            <BookmarksPage />
+          </>}></Route>
           <Route
             path="/"
             element={
