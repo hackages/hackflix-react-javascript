@@ -1,3 +1,8 @@
 export function Loading() {
-  return <h1>Loading</h1>;
+  return (
+    <div className="loading-icon-wrapper">
+      <div className="loading-icon">
+      </div>
+    </div>
+  )
 }
