@@ -10,7 +10,7 @@ export function Filter(props) {
         <li
           key={category.name}
           onClick={() => updateUrl(category.name)}
-          className={`sm:text-xs md:text-xl px-5 md:px-3 cursor-pointer hover:bg-red-700 duration-200 ${
+          className={`sm:text-xs md:text-xl px-5 md:px-3 py-3 cursor-pointer hover:bg-red-700 duration-200 ${
             selectedCategory === category.name ? "bg-red-700" : ""
           }`}
         >
