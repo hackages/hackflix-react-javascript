@@ -1,8 +1,11 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { AppContext } from "../context/AppProvider";
 import { Logo } from "./Logo";
 import { SearchItems } from "./Search";
 
 export function Header() {
+  const context = useContext(AppContext)
   return (
     <header className="py-10 text-white">
       <div className="container mx-auto">
@@ -18,7 +21,7 @@ export function Header() {
             <div className="bookmarks">
               <a className="bookmark-nav py-3 mr-5">
                 Bookmarks
-                <span className="badge text-red-700"> (3)</span>
+                <span className="badge text-red-700"> ({context.numberOfBookmarkedMovies})</span>
               </a>
             </div>
             {/*<Bookmarks></Bookmark>*/}

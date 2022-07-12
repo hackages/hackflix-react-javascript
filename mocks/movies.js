@@ -856,5 +856,6 @@ const mockMovies = [
 
 export const movies = mockMovies.map((movie) => ({
   ...movie,
+  bookmarked: false,
   poster_path: PICTURE_ORIGINAL_URL + movie.poster_path,
 }));
