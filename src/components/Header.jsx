@@ -19,15 +19,17 @@ export function Header() {
                             <input type="search" name="hackflix-search" class="search"></input>
                         </form> */}
             <SearchItems></SearchItems>
-            <div className="bookmarks">
-              <Link className="bookmark-nav py-3 mr-5" to={`/bookmarks`}>
+            <div className="bookmarks mx-3">
+              <Link className="bookmark-nav py-3" to={`/bookmarks`}>
                 Bookmarks
                 <span className="badge text-red-700">
                   {" "}
                   ({context.numberOfBookmarkedMovies})
                 </span>
+
               </Link>
             </div>
+            <button className="bg-red-700 border border-red-700 hover:bg-transparent hover:border hover:border-red-700 hover:text-red-700 text-white py-1 px-7 mx-2 rounded transition-all duration-200 inline-block">login</button>
             {/*<Bookmarks></Bookmark>*/}
           </div>
         </div>
