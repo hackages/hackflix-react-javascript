@@ -36,4 +36,17 @@
     .movie-list {
         min-height: calc(100vh - 270px);
     }
+
+    @media only screen and (min-width: 480px) {
+        .filter-wrapper li:first-child {
+            margin: 0 0 0 12px;
+        }
+    }
+
+    @media only screen and (min-width: 768px) {
+        .filter-wrapper li:first-child {
+            margin: 0;
+        }
+    }
+
 }

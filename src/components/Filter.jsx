@@ -11,8 +11,8 @@ export function Filter(props) {
   useEffect(() => {
     let params = {}
     for (const entry of searchParams.entries()) {
-      params[entry[0]] = entry[1] 
-      if(entry[0] === "category"){
+      params[entry[0]] = entry[1]
+      if (entry[0] === "category") {
         setSelectedCategory(entry[1])
       }
     }
@@ -20,14 +20,13 @@ export function Filter(props) {
   }, [searchParams]);
 
   return (
-    <ul className="sm:flex sm:justify-center bg-gray-900 ease-in-out">
+    <ul className="sm:flex sm:justify-center bg-gray-900 ease-in-out filter-wrapper">
       {props.items.map((category) => (
         <li
           key={category.name}
-          onClick={() => setSearchParams({...urlParams, category: category.name })}
-          className={`px-3 py-3 cursor-pointer hover:bg-red-700 duration-200 ${
-            selectedCategory === category.name ? "bg-red-700" : ""
-          }`}
+          onClick={() => setSearchParams({ ...urlParams, category: category.name })}
+          className={`sm:text-xs md:text-xl px-5 md:px-3 py-3 cursor-pointer hover:bg-red-700 duration-200 ${selectedCategory === category.name ? "bg-red-700" : ""
+            }`}
         >
           {category.name}
         </li>
