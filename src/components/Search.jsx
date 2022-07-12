@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { AppContext } from "../context/AppProvider";
 
 export function SearchItems() {
   const [searchParams, setSearchParams] = useSearchParams();
