@@ -53,4 +53,40 @@
         }
     }
 
+    @keyframes spinning-loading-icon {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    .loading-icon-wrapper {
+        width: 100%;
+        height: 100%;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        max-width: none;
+        border-radius: 0;
+        background-color: #000;
+        min-height: 100vh;
+    }
+
+    .loading-icon {
+        border: 8px solid #fff;
+        border-radius: 50%;
+        border-top: 8px solid #b91c1c;
+        width: 65px;
+        height: 65px;
+        animation: spinning-loading-icon 1.7s linear infinite;
+        position: relative;
+        z-index: 9999;
+        background: transparent;
+    }
+
 }

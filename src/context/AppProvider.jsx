@@ -2,30 +2,42 @@ import { createContext, useState } from "react";
 
 import { filterMovieByTitle, filterMovieByCategoryName } from "../utils";
 
-import { movies } from "../../mocks";
+import { useServerData } from "../hooks/useServerData";
+import { Loading } from "../components/Loading";
 
 export const AppContext = createContext();
 
 export function AppProvider({ children }) {
   const [selectedCategory, setSelectedCategory] = useState("Action");
 
-  const [moviesToShow, updateMovies] = useState(movies);
+  const {
+    movies: moviesToShow,
+    setMovies: updateMovies,
+    fetching,
+    initialMovies,
+  } = useServerData();
 
   function filterByTitle(searchTerm, movies) {
     return filterMovieByTitle(movies, searchTerm);
   }
 
   function filterByCategoryAndTitle(searchParams) {
-    const moviesFilteredByCategory = filterByCategory(searchParams["category"] || "", movies);
-    const filteredMovies = filterByTitle(searchParams["term"] || "", moviesFilteredByCategory);
-    updateMovies(filteredMovies)
+    const moviesFilteredByCategory = filterByCategory(
+      searchParams["category"] || "",
+      initialMovies
+    );
+    const filteredMovies = filterByTitle(
+      searchParams["term"] || "",
+      moviesFilteredByCategory
+    );
+    updateMovies(filteredMovies);
   }
 
   function filterByCategory(categoryName, movies) {
     if (categoryName !== "All" || categoryName !== "") {
       return filterMovieByCategoryName(movies, categoryName);
     }
-    return movies
+    return movies;
   }
 
   function getMovieById(id) {
@@ -51,7 +63,9 @@ export function AppProvider({ children }) {
     updateMovies(newMovies);
   }
 
-  console.log({moviesToShow});
+
+  if (fetching) return <Loading />;
+
   return (
     <AppContext.Provider
       value={{
