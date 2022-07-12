@@ -16,16 +16,22 @@ export function AppProvider({ children }) {
   }
 
   function filterByCategoryAndTitle(searchParams) {
-    const moviesFilteredByCategory = filterByCategory(searchParams["category"] || "", movies);
-    const filteredMovies = filterByTitle(searchParams["term"] || "", moviesFilteredByCategory);
-    updateMovies(filteredMovies)
+    const moviesFilteredByCategory = filterByCategory(
+      searchParams["category"] || "",
+      movies
+    );
+    const filteredMovies = filterByTitle(
+      searchParams["term"] || "",
+      moviesFilteredByCategory
+    );
+    updateMovies(filteredMovies);
   }
 
   function filterByCategory(categoryName, movies) {
     if (categoryName !== "All" || categoryName !== "") {
       return filterMovieByCategoryName(movies, categoryName);
     }
-    return movies
+    return movies;
   }
 
   function getMovieById(id) {
@@ -51,7 +57,7 @@ export function AppProvider({ children }) {
     updateMovies(newMovies);
   }
 
-  console.log({moviesToShow});
+  console.log({ moviesToShow });
   return (
     <AppContext.Provider
       value={{
