@@ -1,7 +1,8 @@
 import React from "react";
 import { Routes, Route, BrowserRouter, Link } from "react-router-dom";
-import { HomePage, NotFoundPage, DetailsPage, BookmarksPage } from "./pages";
+import { HomePage, NotFoundPage, DetailsPage, BookmarksPage, LoginPage } from "./pages";
 import { useServerData } from "./hooks/useServerData";
+
 
 import { Header, Filter, Footer } from "./components";
 import { useContext } from "react";
@@ -39,6 +40,7 @@ function App() {
             element={<DetailsPage />}
           ></Route>
           <Route path="*" element={<NotFoundPage />}></Route>
+          <Route path="login" element={<LoginPage />}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

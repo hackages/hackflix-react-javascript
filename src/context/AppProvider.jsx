@@ -63,7 +63,9 @@ export function AppProvider({ children }) {
     updateMovies(newMovies);
   }
 
+
   if (fetching) return <Loading />;
+
   return (
     <AppContext.Provider
       value={{
