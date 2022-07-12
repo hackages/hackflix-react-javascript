@@ -12,7 +12,6 @@ export function AppProvider({ children }) {
   const [moviesToShow, updateMovies] = useState(movies);
 
   function filterByTitle(searchTerm) {
-    // setSearchQuery(searchTerm);
     const filteredMovies = filterMovieByTitle(movies, searchTerm);
     updateMovies(filteredMovies);
   }
