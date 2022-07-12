@@ -1,14 +1,22 @@
 import {Link} from 'react-router-dom'
 import { useContext } from "react"
 import { AppContext } from "../context/AppProvider"
+import classNames from "classnames"
 
 export function Item({ item }) {
  const context = useContext(AppContext)
   function bookMark(){
     context.bookMark(item)
   }
+
+  const bookmarked = item.bookmarked
+  const bookMarkStyle = classNames ('single-movie', 'border-2', 'rounded-md', 'relative', 'overflow-hidden', 'transition-all', 'duration-300', {
+    'border-green-500' : bookmarked,
+    'border-black' : !bookmarked
+  })
+
   return (
-    <div className={"single-movie border-2 rounded-md relative overflow-hidden transition-all duration-300 " + (item.bookmarked ? 'border-green-500' : 'border-black')}>
+    <div className={bookMarkStyle}>
       <img src={item.poster_path} />
       <div className="movie-content flex items-center justify-center text-center opacity-0 invisible absolute w-full h-full inset-0 px-4 transition-all duration-300">
         <div className="content-inner">
