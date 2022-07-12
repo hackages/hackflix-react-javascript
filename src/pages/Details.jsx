@@ -24,7 +24,7 @@ export function DetailsPage() {
 
   return (
     <section className="wrapper">
-      <div className="movie-list py-20">
+      <div className="movie-list py-20 px-5 md:px-0">
         <div className="container mx-auto">
           <div className="flex items-center">
             <div className='details-image mr-5 rounded-md overflow-hidden'>
