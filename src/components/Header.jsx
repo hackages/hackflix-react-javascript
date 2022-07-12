@@ -29,7 +29,8 @@ export function Header() {
 
               </Link>
             </div>
-            <button className="bg-red-700 border border-red-700 hover:bg-transparent hover:border hover:border-red-700 hover:text-red-700 text-white py-1 px-7 mx-2 rounded transition-all duration-200 inline-block">login</button>
+            <Link className="bg-red-700 border border-red-700 hover:bg-transparent hover:border hover:border-red-700 hover:text-red-700 text-white py-1 px-7 mx-2 rounded transition-all duration-200 inline-block" to={`/login`}>Login</Link>
+
             {/*<Bookmarks></Bookmark>*/}
           </div>
         </div>

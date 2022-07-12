@@ -17,12 +17,12 @@ function App() {
         <Routes>
           <Route path="/" element={<>
             <Filter items={categories}></Filter>
-           <HomePage /> 
+            <HomePage />
           </>}></Route>
           <Route path="movies" element={<HomePage />}></Route>
           <Route path="bookmarks" element={<>
             <Filter items={categories}></Filter>
-           <BookmarksPage /> 
+            <BookmarksPage />
           </>}></Route>
           <Route
             path="movies/details/:movieId"
