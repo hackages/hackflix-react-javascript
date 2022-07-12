@@ -1,13 +1,25 @@
+import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 
-export function useServerData() {
+export function useServerData(movieId = null) {
   const [movies, setMovies] = useState([]);
 
   const [fetching, setFetching] = useState(false);
   const [initialMovies, setInitialMovies] = useState([]);
   const [genres, setGenres] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState({});
+
+  useEffect(() => {
+    if(movieId != null) {
+      // const url = `http://localhost:3000/api/movies?movieId=${movieId}`
+      const url = `https://hackflix-api-with-nextjs.vercel.app/api/movies?movieId=${movieId}`
+      axios.get(url).then(response => {
+        setSelectedMovie(response.data.movies[0])
+      })
+    }
+  }, [movieId])
 
   useEffect(() => {
     setFetching(true);
@@ -47,5 +59,6 @@ export function useServerData() {
     fetching,
     genres,
     categories,
+    selectedMovie
   };
 }
