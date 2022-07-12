@@ -10,7 +10,7 @@ export function SearchItems() {
 
   return (
     <>
-      <form className="flex mr-5 lg:mr-10">
+      <form className="flex mr-5 lg:mr-10 mb-5 sm:mb-0">
         <input
           type="search"
           className="search text-sm rounded-sm max-h-10"

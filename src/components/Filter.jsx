@@ -8,14 +8,13 @@ export function Filter(props) {
   const context = useContext(AppContext);
 
   return (
-    <ul className="flex justify-center bg-gray-900 ease-in-out">
+    <ul className="sm:flex sm:justify-center bg-gray-900 ease-in-out">
       {props.items.map((category) => (
         <li
           key={category.name}
           onClick={() => setSearchParams({ category: category.name })}
-          className={`px-3 py-3 cursor-pointer hover:bg-red-700 duration-200 ${
-            context.selectedCategory === category.name ? "bg-red-700" : ""
-          }`}
+          className={`sm:text-sm md:text-xl px-5 md:px-3 py-3 cursor-pointer hover:bg-red-700 duration-200 ${context.selectedCategory === category.name ? "bg-red-700" : ""
+            }`}
         >
           {category.name}
         </li>

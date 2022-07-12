@@ -18,7 +18,7 @@ export function HomePage() {
   }, [searchParams]);
 
   return (
-    <div className="movie-list py-20">
+    <div className="movie-list py-20 px-5 md:px-0">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-10">
           {movies ? <ItemsList data={movies} /> : <NotFoundPage />}

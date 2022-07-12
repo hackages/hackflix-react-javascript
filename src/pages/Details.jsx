@@ -26,11 +26,11 @@ export function DetailsPage() {
     <section className="wrapper">
       <div className="movie-list py-20">
         <div className="container mx-auto">
-          <div className="flex items-center">
-            <div className='details-image mr-5 rounded-md overflow-hidden'>
+          <div className="md:flex md:items-center px-5 md:px-0">
+            <div className='details-image mb-10 md:mb-0 md:mr-5 rounded-md overflow-hidden md:max-w-xs xl:max-w-none'>
               <img src={movie.poster_path} />
             </div>
-            <div className="details-content ml-5">
+            <div className="details-content md:ml-5">
               <h1 className="mb-5 text-4xl font-bold">{movie.title}</h1>
               <p className="text-sm opacity-75 mb-5">{movie.overview}</p>
               <p className='mb-5'>{genresNames.join(' / ')}</p>
