@@ -14,11 +14,16 @@ function App() {
     <div className="text-white bg-black font-sans text-xl leading-snug font-normal">
       <BrowserRouter>
         <Header></Header>
-        <Filter items={categories}></Filter>
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
+          <Route path="/" element={<>
+            <Filter items={categories}></Filter>
+           <HomePage /> 
+          </>}></Route>
           <Route path="movies" element={<HomePage />}></Route>
-          <Route path="bookmarks" element={<BookmarksPage />}></Route>
+          <Route path="bookmarks" element={<>
+            <Filter items={categories}></Filter>
+           <BookmarksPage /> 
+          </>}></Route>
           <Route
             path="movies/details/:movieId"
             element={<DetailsPage />}
