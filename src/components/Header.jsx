@@ -14,20 +14,19 @@ export function Header() {
           <NavLink to="/">
             <Logo></Logo>
           </NavLink>
-          <div className="sm:flex md:justify-end items-center sm:text-right lg:w-1/2 md:w-3/4 w-full">
-            {/* <form className="flex mr-5 lg:mr-10">
-                            <input type="search" name="hackflix-search" class="search"></input>
-                        </form> */}
+          <div className="md:flex md:justify-end sm:items-center md:text-right lg:w-7/12 md:w-3/4 w-full mb-5 md:mb-0">
             <SearchItems></SearchItems>
-            <div className="bookmarks">
-              <Link className="bookmark-nav py-3 mr-5" to={`/bookmarks`}>
+            <div className="bookmarks mt-5 md:mt-0 mb-5 md:mb-0 md:mx-3">
+              <Link className="bookmark-nav py-3" to={`/bookmarks`}>
                 Bookmarks
                 <span className="badge text-red-700">
                   {" "}
                   ({context.numberOfBookmarkedMovies})
                 </span>
+
               </Link>
             </div>
+            <button className="bg-red-700 border border-red-700 hover:bg-transparent hover:border hover:border-red-700 hover:text-red-700 text-white py-3 px-7 md:ml-2 rounded transition-all duration-200">login</button>
             {/*<Bookmarks></Bookmark>*/}
           </div>
         </div>
