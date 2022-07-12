@@ -1,12 +1,25 @@
-import { useContext } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { AppContext } from "../context/AppProvider";
 
 export function SearchItems() {
-  const { filterByCategoryAndTitle, searchQuery } = useContext(AppContext);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [urlParams, setUrlsParams] = useState({})
 
+  useEffect(() => {
+    let params = {}
+    for (const entry of searchParams.entries()) {
+        params[entry[0]] = entry[1] 
+    }
+    setUrlsParams(params)
+  }, [searchParams]);
+ 
   function searchHandler(event) {
     event.preventDefault()
-    // filterByTitle(event.target.value);
+  
+    setSearchParams(
+      {...urlParams, term: event.target.value}
+    )
   }
 
   return (
@@ -16,7 +29,7 @@ export function SearchItems() {
           type="search"
           className="search text-sm rounded-sm max-h-10"
           placeholder="search"
-          value={searchQuery}
+          value={urlParams["term"]}
           onChange={searchHandler}
         ></input>
       </form>
