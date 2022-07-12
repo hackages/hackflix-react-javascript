@@ -6,11 +6,11 @@ export function Header() {
   return (
     <header className="py-10 text-white">
       <div className="container mx-auto">
-        <div className="sm:flex items-center justify-between">
+        <div className="md:flex md:items-center md:justify-between px-4 md:p-0">
           <NavLink to="/">
             <Logo></Logo>
           </NavLink>
-          <div className="flex justify-center sm:justify-end items-center text-right lg:w-1/2 sm:w-3/4 w-full">
+          <div className="sm:flex md:justify-end items-center sm:text-right lg:w-1/2 md:w-3/4 w-full">
             {/* <form className="flex mr-5 lg:mr-10">
                             <input type="search" name="hackflix-search" class="search"></input>
                         </form> */}
