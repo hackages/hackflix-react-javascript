@@ -7,7 +7,6 @@ import { movies } from "../../mocks";
 export const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("Action");
 
   const [moviesToShow, updateMovies] = useState(movies);
@@ -43,17 +42,27 @@ export function AppProvider({ children }) {
     filterByCategory(selectedFilter || "Any");
   }
 
+  function bookMark(bookMarkedMovie){
+    const newMovies = moviesToShow.map(movie => {
+      return {
+        ...movie,
+        bookmarked: movie.id === bookMarkedMovie.id? !movie.bookmarked: movie.bookmarked
+      }
+    })
+    updateMovies(newMovies)
+  }
+
   return (
     <AppContext.Provider
       value={{
         movies: moviesToShow,
-        filterByTitle,
-        searchQuery,
         selectFilter,
         selectedCategory,
         filterByCategoryAndTitle,
         filterByCategory,
         getMovieById,
+        bookMark,
+        numberOfBookmarkedMovies: moviesToShow.filter(movie => movie.bookmarked).length
       }}
     >
       {children}
