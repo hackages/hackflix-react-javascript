@@ -11,6 +11,8 @@ export function HomePage() {
 
   useEffect(() => {
     let searchQueries = [];
+    // http://localhost:3000/?category=Action&term=cure
+    /// searchParams: [["category", "Action"], ["term", "cure"]] 
     for (const entry of searchParams.entries()) {
       searchQueries[entry[0]] = entry[1];
     }
