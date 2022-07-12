@@ -12,7 +12,7 @@ export function AppProvider({ children }) {
   const [moviesToShow, updateMovies] = useState(movies);
 
   function filterByTitle(searchTerm) {
-    setSearchQuery(searchTerm);
+    // setSearchQuery(searchTerm);
     const filteredMovies = filterMovieByTitle(movies, searchTerm);
     updateMovies(filteredMovies);
   }
@@ -42,14 +42,17 @@ export function AppProvider({ children }) {
     filterByCategory(selectedFilter || "Any");
   }
 
-  function bookMark(bookMarkedMovie){
-    const newMovies = moviesToShow.map(movie => {
+  function bookMark(bookMarkedMovie) {
+    const newMovies = moviesToShow.map((movie) => {
       return {
         ...movie,
-        bookmarked: movie.id === bookMarkedMovie.id? !movie.bookmarked: movie.bookmarked
-      }
-    })
-    updateMovies(newMovies)
+        bookmarked:
+          movie.id === bookMarkedMovie.id
+            ? !movie.bookmarked
+            : movie.bookmarked,
+      };
+    });
+    updateMovies(newMovies);
   }
 
   return (
@@ -62,7 +65,9 @@ export function AppProvider({ children }) {
         filterByCategory,
         getMovieById,
         bookMark,
-        numberOfBookmarkedMovies: moviesToShow.filter(movie => movie.bookmarked).length
+        numberOfBookmarkedMovies: moviesToShow.filter(
+          (movie) => movie.bookmarked
+        ).length,
       }}
     >
       {children}
